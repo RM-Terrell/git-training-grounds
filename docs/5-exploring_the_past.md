@@ -65,7 +65,7 @@ A similarly useful but more focused tool for finding out when and how something 
 
 ### Exercise: using `blame` to power `diff`
 
-Get the line number of this line of text you're reading right now. (FOLLOW THE WHITE RABBIT) In the console run
+Get the line number of this line of text you're reading right now. In the console run
 
 ```bash
 git blame -L line_number_here, line_number_here path/to/file

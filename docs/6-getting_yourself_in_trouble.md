@@ -28,7 +28,7 @@ Let's create this situation on purpose to see it in a safe environment and then 
     touch functions.py
     ```
 
-2. OPen the new directory in your code editor and add this content to `functions.py` and save it. Then add it to the staging area and commit it. For all of these steps, add verbose commit message mentioning the branch you're on to make it easier to understand in `log` history later.
+2. Open the new directory in your code editor and add this content to `functions.py` and save it. Then add it to the staging area and commit it. For all of these steps, add verbose commit message mentioning the branch you're on to make it easier to understand in `log` history later.
 
     ```python
     def first_function():
