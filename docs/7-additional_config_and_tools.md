@@ -13,7 +13,7 @@ Run those once and you're set for every repo on the machine. If you need to use 
 
 ## Git Bisect
 
-Have you ever had a stream of commits where _somewhere_ along the way a bug / change / improvement was introduced but you don't know exactly where and would like to find out? The tool you need for this situation is `bisect`. In short, `bisect` as an interactive debugging tool that cuts your git history in half along some defined range switching your code base to a commit that point. You then run some test determining if what you're looking for is present (another selling point for unit tests here), you then tell bisect if what you're looking for present or not, and based on that it cuts your git history in half again and switches your code base to that midpoint commit.
+Have you ever had a stream of commits where _somewhere_ along the way a bug / change / improvement was introduced but you don't know exactly where and would like to find out? The tool you need for this situation is `bisect`. In short, `bisect` as an interactive debugging tool that cuts your git history in half along some defined range switching your code base to a commit at that point. You then run some test determining if what you're looking for is present (another selling point for unit tests here), you then tell bisect if what you're looking for is present or not, and based on that it cuts your git history in half again and switches your code base to that midpoint commit.
 
 It is an incredibly powerful tool and for a more detailed use guide, go [here](https://www.metaltoad.com/blog/beginners-guide-git-bisect-process-elimination).
 
@@ -29,9 +29,9 @@ Gemini specifically (per January of 2025) I've found to be a good tool for `git`
 
 **Please do not automate your entire code review process with AI.** Non deterministic systems should never have total authority on the building of deterministic code systems.
 
-With that disclaimer out of the way, it can sometimes be useful to use AI tools as a second set of eyes on a change set to review, summarize, and investigate complex diffs like a little minion. This is especially useful in complex SQL queries or data parsing algorithms that have undergone significant changes without unit tests to verify them in a deterministic way. There is a slick way to do this using commands you now know chained together.
+With that disclaimer out of the way, it can sometimes be useful to use AI tools as a second set of eyes on a change to review, summarize, and investigate complex diffs like a little minion. If the summary it provides differs from what you expect the code to do, you _might_ be seeing something interesting or it might be usual LLM craziness. I've caught a few interesting edge case behaviors in code this way I didn't see with my own eyes initially. This is especially useful in complex SQL queries or data parsing algorithms that have undergone significant changes without unit tests to verify them in a deterministic way.
 
-With a branch checked out from a PR that contains changes relative to `master` run the following:
+There is a slick way to do this using commands you now know chained together. With a branch checked out from a PR that contains changes relative to `master` (or any other branch you want to compare to) run the following:
 
 ```bash
 git diff master...HEAD -- path/to/file/you/want/to/compare > changes.diff
@@ -43,7 +43,7 @@ This command will generate a `diff` for the branches cumulative changes to a fil
 git diff master...HEAD > changes.diff
 ```
 
-You can then pass the diff data into an AI tool with a prompt like "please summarize the changes in this diff". I've found the most interesting results come from leaving the prompt open ended as it will sometimes find consequences of changes you didn't see initially. This `diff` workflow can also be used in your own development where you have a set of unit tests that must be updated for a change by feeding the diff into the AI tool, along with the file of unit tests and asking it update the tests accordingly. Or vise versa if you're the TDD type. Such narrow and specific focus for AI tools usually results in reliable outputs.
+You can then pass the diff data into an AI tool with a prompt like "please summarize the changes in this diff". **An important note**: the diff it creates will lack the larger file / application context, as it will ONLY contain changes. Your LLM wont know about the rest of the file, and say redeclared global variables this way. It's a narrow context. This `diff` workflow can also be used in your own development where you have a set of unit tests that must be updated for a change by feeding the diff into the AI tool, along with the file of unit tests and asking it update the tests accordingly. Or vise versa if you're the TDD type. Such narrow and specific focus for AI tools usually results in reliable outputs.
 
 Use this responsibly and with great skepticism.
 
