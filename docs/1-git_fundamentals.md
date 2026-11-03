@@ -46,7 +46,7 @@ Working on computer programming code is akin to group gardening crossed with bei
 
 ### A brief historical tangent
 
-`git` is a Version Control System (VCS). There have been many such technologies since the move to digital computing to manage source code once we left punch cards in the literal dust, but nowadays `git` is by far the most used and arguably the best VCS system. It was originally developed by Linus Torvalds for working on the kernel of the Linux operating system, which was a sufficiently challenging and distributed project that existing VCS systems were proving too limited in terms of performance and features combined with a snafu involving licensing of the previous VCS system that forced Linus to find a new solution. As a result he made his own VCS system.
+`git` is a Version Control System (VCS). There have been many such technologies since the move to digital computing to manage source code once we left punch cards in the literal dust, but nowadays `git` is by far the most used and arguably the best VCS. It was originally developed by Linus Torvalds for working on the kernel of the Linux operating system, which was a sufficiently challenging and distributed project that existing VCS were proving too limited in terms of performance and features combined with a snafu involving licensing of the previous VCS that forced Linus to find a new solution. As a result he made his own VCS.
 
 The name "git" is a play on the British definition of the word for "an unpleasant person" and according to Linus himself:
 

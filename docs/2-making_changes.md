@@ -43,7 +43,7 @@ modified:   ../src/modify_me.py
 
 If you ran a `git status` while inside `/docs/` you will see the `..` before the path. If you run it from the root of the project you won't see the `..`. `git` changes the paths of a `git status` relative to directory you ran it in.
 
-Now you'll probably be asking yourself "so what?". Good question. Here's were the useful features start with `git`, via a tool called `diff` (difference) that lets you see not just that a file changed but _what_ changed.
+Now you'll probably be asking yourself "so what?". Good question. Here's where the useful features start with `git`, via a tool called `diff` (difference) that lets you see not just that a file changed but _what_ changed.
 
 ## Seeing how things changed (git diff)
 

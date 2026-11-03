@@ -27,9 +27,9 @@ Gemini specifically (per January of 2025) I've found to be a good tool for `git`
 
 ## Diff to AI tool workflow
 
-**Please do not automate your entire code review process with AI.** Non deterministic systems should never have total authority on the building of deterministic code systems.
+**Please do not automate your entire code review process with LLMs.** Non deterministic systems should never have total authority on the building of deterministic code systems.
 
-With that disclaimer out of the way, it can sometimes be useful to use AI tools as a second set of eyes on a change to review, summarize, and investigate complex diffs like a little minion. If the summary it provides differs from what you expect the code to do, you _might_ be seeing something interesting or it might be usual LLM craziness. I've caught a few interesting edge case behaviors in code this way I didn't see with my own eyes initially. This is especially useful in complex SQL queries or data parsing algorithms that have undergone significant changes without unit tests to verify them in a deterministic way.
+With that disclaimer out of the way, it can sometimes be useful to use LLM tools as a second set of eyes on a change to review, summarize, and investigate complex diffs like a little minion. If the summary it provides differs from what you expect the code to do, you _might_ be seeing something interesting or it might be usual LLM craziness. I've caught a few interesting edge case behaviors in code this way I didn't see with my own eyes initially. This is especially useful in complex SQL queries or data parsing algorithms that have undergone significant changes without unit tests to verify them in a deterministic way.
 
 There is a slick way to do this using commands you now know chained together. With a branch checked out from a PR that contains changes relative to `master` (or any other branch you want to compare to) run the following:
 
